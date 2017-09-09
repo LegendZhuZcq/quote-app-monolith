@@ -26,6 +26,11 @@ public class QuoteController {
         return quoteService.randomQuote();
     }
     
+    @RequestMapping("/api/quote/all")//Request new services
+    public Quote all() {
+        return quoteService.all();
+    }
+    
     @RequestMapping(value = "/api/quote", method = RequestMethod.POST)
     public void saveQuote(@RequestBody Quote quote) {
         System.out.println(quote);

@@ -25,5 +25,13 @@ public class QuoteServiceImpl implements QuoteServiceCustom {
         Quote q = quotes.get(random.nextInt(quotes.size()));
         return q;
     }
+    
+    public Quote all() {
+    	ArrayList<Quote> quotes = new ArrayList<Quote>();
+    	for (Quote q: this.quoteService.findAll() ) {
+             quotes.add(q);
+        }
+    	return quotes;
+    }
 
 }
