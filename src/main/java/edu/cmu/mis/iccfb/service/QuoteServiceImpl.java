@@ -26,7 +26,7 @@ public class QuoteServiceImpl implements QuoteServiceCustom {
         return q;
     }
     
-    public Quote all() {
+    public ArrayList<Quote> all() {
     	ArrayList<Quote> quotes = new ArrayList<Quote>();
     	for (Quote q: this.quoteService.findAll() ) {
              quotes.add(q);

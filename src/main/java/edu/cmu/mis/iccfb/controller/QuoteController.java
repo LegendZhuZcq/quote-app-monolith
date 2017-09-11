@@ -1,6 +1,8 @@
 package edu.cmu.mis.iccfb.controller;
 
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,8 +28,8 @@ public class QuoteController {
         return quoteService.randomQuote();
     }
     
-    @RequestMapping("/api/quote/all")//Request new services
-    public Quote all() {
+    @RequestMapping("/api/quote/all")//Request all Quotes
+    public ArrayList<Quote> all() {
         return quoteService.all();
     }
     

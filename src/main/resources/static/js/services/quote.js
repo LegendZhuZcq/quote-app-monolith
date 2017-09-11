@@ -7,6 +7,10 @@ angular.module('app.services', [])
 		random: {
 			method: 'GET',
 			url: '/api/quote/random'
-		}
+		},
+	    all:{
+	    	method: 'GET',
+	    	url: '/api/quote/all'
+	    }
 	});
 });

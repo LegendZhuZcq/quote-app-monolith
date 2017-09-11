@@ -22,5 +22,11 @@ app.config(function($urlRouterProvider, $stateProvider) {
             url: "/add",
             templateUrl : "templates/add.html",
             controller: "SaveQuoteCtrl"
-        });
+        })
+        .state("all",{
+        	url: "/all",
+        	templateUrl : "templates/all.html",
+        	controller: "FetchAllCtrl"
+        })
+        ;
 });
