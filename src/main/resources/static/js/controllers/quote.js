@@ -8,10 +8,10 @@ angular.module('app.controllers', [])
 			$scope.quote = quote;
 		});
 })
-.controller('FetchAllCtrl', function($scope, QuoteService){
-	QuoteService.all()
-	    .$promise.then(function(quotes){
-	    	$scope.quotes=quotes;
+.controller('AuthorCtrl', function($scope, QuoteService){
+	QuoteService.findAuthorQuotes("Albert Einstein")
+	    .$promise.then(function(author){
+	    	$scope.author=author
 	    });
 })
 .controller('SaveQuoteCtrl', function($scope, $state, QuoteService) {

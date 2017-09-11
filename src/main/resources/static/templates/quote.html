@@ -1,25 +1,12 @@
-<!-- <div class="row"> -->
-<!--  <div class="col-md-12"> -->
-<!--   <h3 class="quote-text text-center">{{quote.text}}</h3> -->
-<!--  </div> -->
-<!-- </div> -->
-<!-- <div class="row"> -->
-<!--  <div class="col-md-12"> -->
-<!--   <p class="text-right">- {{quote.author.name}}</p> -->
-<!--  </div> -->
-<!-- </div> -->
-
-<!-- <a ui-sref="add" class="quote-add">Add</a> -->
-<div ng-repeat="quote in quotes">
-	<div class="row">
-		<div class="col-md-12">
-			<h3 class="quote-text text-center">{{quote.text}}</h3>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<p class="text-right">- {{quote.author.name}}</p>
-		</div>
-	</div>
+<div class="row">
+ <div class="col-md-12">
+  <h3 class="quote-text text-center">{{quote.text}}</h3>
+ </div>
 </div>
+<div class="row">
+ <div class="col-md-12">
+ <a ui-sref="author"><p class="text-right">- {{quote.author.name}}</p></a>
+ </div>
+</div>
+
 <a ui-sref="add" class="quote-add">Add</a>

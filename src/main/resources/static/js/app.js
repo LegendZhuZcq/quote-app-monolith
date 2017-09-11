@@ -20,8 +20,13 @@ app.config(function($urlRouterProvider, $stateProvider) {
         })
         .state("add", {
             url: "/add",
-            templateUrl : "templates/all.html",
-            controller: "FetchAllCtrl"
+            templateUrl : "templates/add.html",
+            controller: "SaveQuoteCtrl"
+        })
+        .state("author", {
+            url: "/author",
+            templateUrl : "templates/author.html",
+            controller: "SaveQuoteCtrl"
         })
         ;
 });

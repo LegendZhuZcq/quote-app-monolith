@@ -1,7 +1,7 @@
 package edu.cmu.mis.iccfb.controller;
 
 
-import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,9 +28,11 @@ public class QuoteController {
         return quoteService.randomQuote();
     }
     
-    @RequestMapping("/api/quote/all")//Request all Quotes
-    public ArrayList<Quote> all() {
-        return quoteService.all();
+    @RequestMapping(value = "/api/author", method = RequestMethod.POST)//Request all Quotes
+    public Author findAuthor(@RequestBody String authorName) {
+    	System.out.println(authorName);//Debug only
+    	Author a= authorService.findByName(authorName);
+    	return a;	
     }
     
     @RequestMapping(value = "/api/quote", method = RequestMethod.POST)

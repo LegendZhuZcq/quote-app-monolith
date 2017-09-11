@@ -1,10 +1,12 @@
 package edu.cmu.mis.iccfb.service;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import edu.cmu.mis.iccfb.model.Author;
 import edu.cmu.mis.iccfb.model.Quote;
 
 
@@ -14,11 +16,9 @@ public class QuoteServiceImpl implements QuoteServiceCustom {
     
     @Autowired
     private QuoteService quoteService;
-    
     @Override
     public Quote randomQuote() {
         ArrayList<Quote> quotes = new ArrayList<Quote>();
-        
         for (Quote q: this.quoteService.findAll() ) {
             quotes.add(q);
         }
@@ -26,12 +26,11 @@ public class QuoteServiceImpl implements QuoteServiceCustom {
         return q;
     }
     
-    public ArrayList<Quote> all() {
-    	ArrayList<Quote> quotes = new ArrayList<Quote>();
-    	for (Quote q: this.quoteService.findAll() ) {
-             quotes.add(q);
-        }
+    public List<Quote> findQuotesByAuthor(Author author){
+    	   	List<Quote> quotes = author.getQuotes();
+    	   	System.out.println(quotes);
     	return quotes;
     }
+
 
 }
