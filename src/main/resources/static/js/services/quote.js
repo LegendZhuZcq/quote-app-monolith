@@ -8,9 +8,9 @@ angular.module('app.services', [])
 			method: 'GET',
 			url: '/api/quote/random'
 		},
-	    all:{
-	    	method: 'GET',
-	    	url: '/api/quote/all'
-	    }
+		author:{
+			method: 'GET',
+			url:'/api/:quote'
+		}
 	});
 });

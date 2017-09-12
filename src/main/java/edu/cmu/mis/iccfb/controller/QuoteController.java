@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.cmu.mis.iccfb.model.Author;
@@ -28,8 +29,8 @@ public class QuoteController {
         return quoteService.randomQuote();
     }
     
-    @RequestMapping(value = "/api/author", method = RequestMethod.POST)//Request all Quotes
-    public Author findAuthor(@RequestBody String authorName) {
+    @RequestMapping(value = "/api/quote")//Request all Quotes
+    public Author findAuthor(@RequestParam(value="name", defaultValue="Albert Einstein") String authorName) {
     	System.out.println(authorName);//Debug only
     	Author a= authorService.findByName(authorName);
     	return a;	

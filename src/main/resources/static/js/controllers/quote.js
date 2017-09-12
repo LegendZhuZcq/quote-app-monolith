@@ -9,10 +9,10 @@ angular.module('app.controllers', [])
 		});
 })
 .controller('AuthorCtrl', function($scope, QuoteService){
-	QuoteService.findAuthorQuotes("Albert Einstein")
-	    .$promise.then(function(author){
-	    	$scope.author=author
-	    });
+	QuoteService.author({name:'Albert+Einstein'})
+	    .$promise.then(function(quote){
+	    	 $scope.author=author;
+	    	});
 })
 .controller('SaveQuoteCtrl', function($scope, $state, QuoteService) {
     
