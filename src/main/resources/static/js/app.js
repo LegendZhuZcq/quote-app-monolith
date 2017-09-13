@@ -24,9 +24,9 @@ app.config(function($urlRouterProvider, $stateProvider) {
             controller: "SaveQuoteCtrl"
         })
         .state("author", {
-            url: "/author",
+            url: "/author/:authorName",
             templateUrl : "templates/author.html",
-            controller: "SaveQuoteCtrl"
+            controller: "AuthorCtrl"
         })
         ;
 });

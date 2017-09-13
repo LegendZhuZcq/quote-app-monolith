@@ -8,9 +8,11 @@ angular.module('app.controllers', [])
 			$scope.quote = quote;
 		});
 })
-.controller('AuthorCtrl', function($scope, QuoteService){
-	QuoteService.author({name:'Albert+Einstein'})
-	    .$promise.then(function(quote){
+.controller('AuthorCtrl', function($scope,$stateParams, QuoteService){
+	console.log($stateParams.authorName);
+	QuoteService.author({name:$stateParams.authorName})
+	    .$promise.then(function(author){
+	    	 console.log(author.name);
 	    	 $scope.author=author;
 	    	});
 })

@@ -10,7 +10,7 @@ angular.module('app.services', [])
 		},
 		author:{
 			method: 'GET',
-			url:'/api/:quote'
+			url:'/api/quote'
 		}
 	});
 });
