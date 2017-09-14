@@ -26,7 +26,10 @@ app.config(function($urlRouterProvider, $stateProvider) {
         .state("author", {
             url: "/author/:authorName",
             templateUrl : "templates/author.html",
-            controller: "AuthorCtrl"
+            controller: "AuthorCtrl",
+            params:{
+            	authorName:null
+            }
         })
         ;
 });
